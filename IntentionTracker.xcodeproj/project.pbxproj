@@ -17,7 +17,7 @@
 		58B31AD21E1F31D0003BE3BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B31AD01E1F31D0003BE3BD /* LaunchScreen.storyboard */; };
 		58B31ADD1E1F31D0003BE3BD /* IntentionTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B31ADC1E1F31D0003BE3BD /* IntentionTrackerTests.swift */; };
 		58B31AE81E1F31D0003BE3BD /* IntentionTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B31AE71E1F31D0003BE3BD /* IntentionTrackerUITests.swift */; };
-		58B31AF61E1F3210003BE3BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B31AF51E1F3210003BE3BD /* GoogleService-Info.plist */; };
+		58F2A6D01E20642C0028272A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58F2A6CF1E20642C0028272A /* GoogleService-Info.plist */; };
 		E870CF9495C682094FAA5BA9 /* Pods_IntentionTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0FA5CB37D34D0ECD71B554F /* Pods_IntentionTrackerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +56,7 @@
 		58B31AE31E1F31D0003BE3BD /* IntentionTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntentionTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B31AE71E1F31D0003BE3BD /* IntentionTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentionTrackerUITests.swift; sourceTree = "<group>"; };
 		58B31AE91E1F31D0003BE3BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58B31AF51E1F3210003BE3BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		58F2A6CF1E20642C0028272A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F2E9A9687F2EDEEB655BDC4 /* Pods-IntentionTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntentionTrackerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IntentionTrackerTests/Pods-IntentionTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC807F8116C9A5A23C43B19D /* Pods-IntentionTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntentionTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IntentionTracker/Pods-IntentionTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		D16964FA1A9D9C932FAE94B4 /* Pods_IntentionTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntentionTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,8 +124,8 @@
 				58B31ACE1E1F31D0003BE3BD /* Assets.xcassets */,
 				58B31AD01E1F31D0003BE3BD /* LaunchScreen.storyboard */,
 				58B31AD31E1F31D0003BE3BD /* Info.plist */,
-				58B31AF51E1F3210003BE3BD /* GoogleService-Info.plist */,
 				582650B01E1F6993002CB993 /* RegisterController.swift */,
+				58F2A6CF1E20642C0028272A /* GoogleService-Info.plist */,
 			);
 			path = IntentionTracker;
 			sourceTree = "<group>";
@@ -289,7 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58B31AD21E1F31D0003BE3BD /* LaunchScreen.storyboard in Resources */,
-				58B31AF61E1F3210003BE3BD /* GoogleService-Info.plist in Resources */,
+				58F2A6D01E20642C0028272A /* GoogleService-Info.plist in Resources */,
 				58B31ACF1E1F31D0003BE3BD /* Assets.xcassets in Resources */,
 				58B31ACD1E1F31D0003BE3BD /* Main.storyboard in Resources */,
 			);

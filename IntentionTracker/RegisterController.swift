@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterController: UIViewController {
     
@@ -16,7 +17,6 @@ class RegisterController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
-    
     
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -57,12 +57,27 @@ class RegisterController: UIViewController {
         
         performSegue(withIdentifier: "LoginToggle", sender: nil)
 
-        
     }
     
-    @IBAction func registerToggleButtonPressed(_ sender: UIButton) {
+    @IBAction func registerButtonPressed(_ sender: UIButton) {
         
-        
+        FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+            if error != nil {
+                print(error!)
+            }
+            
+            let ref = FIRDatabase.database().reference(fromURL: "https://intentiontracker-cfbda.firebaseio.com")
+            let userReference = ref.child("users")
+            let values = ["name": self.nameTextField.text, "email": self.emailTextField.text]
+            
+            ref.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                if err != nil {
+                    print(err!)
+                }
+            })
+            
+            
+        })
     }
     
     

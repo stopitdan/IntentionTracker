@@ -7,19 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>1043138078502-ps41u11f1d7fr8r57jspdtmsop4863br.apps.googleusercontent.com</string>
+	<string>49596974604-gsm1cg9ga130j1u6rrbohsifr0aft5jf.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1043138078502-ps41u11f1d7fr8r57jspdtmsop4863br</string>
+	<string>com.googleusercontent.apps.49596974604-gsm1cg9ga130j1u6rrbohsifr0aft5jf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBuL9Lq7oYkrc0yPJ_DuFjat9fShG0NeJs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1043138078502</string>
+	<string>49596974604</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.danwiegand.RealLogin</string>
+	<string>com.stopit.IntentionTracker</string>
 	<key>PROJECT_ID</key>
-	<string>reallogin-d047d</string>
+	<string>intentiontracker-cfbda</string>
 	<key>STORAGE_BUCKET</key>
-	<string>reallogin-d047d.appspot.com</string>
+	<string>intentiontracker-cfbda.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1043138078502:ios:7077be3f08a9b01a</string>
+	<string>1:49596974604:ios:0dfc2faad4ad4d61</string>
 	<key>DATABASE_URL</key>
-	<string>https://reallogin-d047d.firebaseio.com</string>
+	<string>https://intentiontracker-cfbda.firebaseio.com</string>
 </dict>
 </plist>

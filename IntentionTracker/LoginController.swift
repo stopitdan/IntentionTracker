@@ -7,15 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginController: UIViewController {
 
     @IBOutlet weak var inputsView: UIView!
     
-    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     
     
@@ -26,7 +25,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        formAttributes()
+        setFormAttributes()
         changePlaceholderColors()
         
     
@@ -42,7 +41,7 @@ class LoginController: UIViewController {
     }
     
     
-    func formAttributes() {
+    func setFormAttributes() {
         
         inputsView.layer.cornerRadius = 6
         inputsView.layer.masksToBounds = true
@@ -50,16 +49,21 @@ class LoginController: UIViewController {
         inputsView.layer.borderWidth = 1
     }
     
-    
-    @IBAction func logginToggleButtonPressed(_ sender: UIButton) {
-        
-        
-    }
 
     @IBAction func registerToggleButtonPressed(_ sender: UIButton) {
         
         performSegue(withIdentifier: "RegisterToggle", sender: nil)
 
+    }
+    
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        
+        FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+            if error != nil {
+                print(error!)
+            }
+        })
+        
     }
     
 
