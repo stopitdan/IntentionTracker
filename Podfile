@@ -11,6 +11,9 @@ pod 'Firebase'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
+pod 'TextFieldEffects'
+pod 'SimpleAlert'
+
 
   target 'IntentionTrackerTests' do
     inherit! :search_paths

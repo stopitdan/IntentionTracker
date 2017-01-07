@@ -46,12 +46,16 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
   - GTMSessionFetcher/Core (1.1.7)
+  - SimpleAlert (2.0.1)
+  - TextFieldEffects (1.3.0)
 
 DEPENDENCIES:
   - Firebase
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
+  - SimpleAlert
+  - TextFieldEffects
 
 SPEC CHECKSUMS:
   Firebase: ff77ffb77b317c3720fef57a60e9335cebf962e6
@@ -65,7 +69,9 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  SimpleAlert: 383d1197df2e7b70b9bef5771f3632979c1aadae
+  TextFieldEffects: ef594746f17997c813e07633f8ae5acaf9b04f27
 
-PODFILE CHECKSUM: 42343e567ee761d0f30f386b1a9753df449b8024
+PODFILE CHECKSUM: 5dbc8a0d02fa2740bf7af383054fc8face88caa5
 
 COCOAPODS: 1.1.1
