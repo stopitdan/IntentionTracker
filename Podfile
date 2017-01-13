@@ -13,7 +13,10 @@ pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'TextFieldEffects'
 pod 'SimpleAlert'
-
+pod 'RAMAnimatedTabBarController', "~> 2.0.13"
+pod 'TransitionTreasury', "~> 3.0.4"
+pod 'TransitionAnimation'
+pod 'BWWalkthrough'
 
   target 'IntentionTrackerTests' do
     inherit! :search_paths

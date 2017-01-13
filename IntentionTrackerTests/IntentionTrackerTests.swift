@@ -7,7 +7,8 @@
 //
 
 import XCTest
-@testable import IntentionTracker
+import Firebase; @testable import IntentionTracker
+
 
 class IntentionTrackerTests: XCTestCase {
     

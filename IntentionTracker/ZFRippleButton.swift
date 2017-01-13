@@ -7,6 +7,7 @@
 //
 import UIKit
 import QuartzCore
+import Firebase
 
 @IBDesignable
 open class ZFRippleButton: UIButton {
@@ -39,7 +40,7 @@ open class ZFRippleButton: UIButton {
     @IBInspectable open var shadowRippleRadius: Float = 1.8
     @IBInspectable open var shadowRippleEnable: Bool = true
     @IBInspectable open var trackTouchLocation: Bool = true
-    @IBInspectable open var touchUpAnimationTime: Double = 0.6
+    @IBInspectable open var touchUpAnimationTime: Double = 0.4
     
     let rippleView = UIView()
     let rippleBackgroundView = UIView()

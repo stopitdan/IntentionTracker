@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SimpleAlert
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

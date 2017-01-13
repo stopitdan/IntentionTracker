@@ -10,8 +10,17 @@ import UIKit
 import Firebase
 import TextFieldEffects
 import SimpleAlert
+import RAMAnimatedTabBarController
+import TransitionTreasury
+import TransitionAnimation
+import BWWalkthrough
 
-class LoginController: UIViewController {
+
+
+class LoginController: UIViewController, NavgationTransitionable, BWWalkthroughViewControllerDelegate {
+    
+    var tr_presentTransition: TRViewControllerTransitionDelegate?
+    var tr_pushTransition: TRNavgationTransitionDelegate?
 
     @IBOutlet weak var inputsView: UIView!
     
@@ -29,12 +38,50 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if FIRAuth.auth()?.currentUser == nil {
+            let uid = FIRAuth.auth()?.currentUser?.uid
+            FIRDatabase.database().reference(fromURL: "https://intentiontracker-cfbda.firebaseio.com").child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                if let dictionary = snapshot.value as? [String: AnyObject] {
+                    let name = dictionary["name"] as! String
+                    print(name)
+                    self.showWalkthrough()
+                }
+                
+            }, withCancel: nil)
+            
+        }
+        else {
+            print("*!@%^&%%$#$@%#^$&^*%$&%#^@%!$!%#@$^#&%$^*&%#^$@%#@^#")
+        }
         setFormAttributes()
         changePlaceholderColors()
         self.hideKeyboardWhenTappedAround()
         
     
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    func showWalkthrough(){
+        
+        // Get view controllers and build the walkthrough
+        let stb = UIStoryboard(name: "Main", bundle: nil)
+        let walkthrough = stb.instantiateViewController(withIdentifier: "Master") as! BWWalkthroughViewController
+        let page_one = stb.instantiateViewController(withIdentifier: "page1")
+        let page_two = stb.instantiateViewController(withIdentifier: "page2")
+        let page_three = stb.instantiateViewController(withIdentifier: "page3")
+        
+        // Attach the pages to the master
+        walkthrough.delegate = self
+        walkthrough.addViewController(vc: page_one)
+        walkthrough.addViewController(vc: page_two)
+        walkthrough.addViewController(vc: page_three)
+        
+        self.present(walkthrough, animated: true, completion: nil)
     }
     
     func changePlaceholderColors() {
@@ -64,7 +111,8 @@ class LoginController: UIViewController {
 
     @IBAction func registerToggleButtonPressed(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "RegisterToggle", sender: nil)
+        self.navigationController?.tr_pushViewController((UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Register") as! RegisterController), method: TRPushTransitionMethod.fade)
+
 
     }
     
@@ -100,7 +148,11 @@ class LoginController: UIViewController {
 
                 return
             }
+            
+            print("*************************")
+            
         })
+        
         
     }
     func alertMessage(alertAction: AlertAction) {

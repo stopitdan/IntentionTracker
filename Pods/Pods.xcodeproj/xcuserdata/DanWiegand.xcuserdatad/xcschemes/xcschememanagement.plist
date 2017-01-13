@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BWWalkthrough-BWWalkthrough.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>BWWalkthrough.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,12 +39,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RAMAnimatedTabBarController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SimpleAlert.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>TextFieldEffects.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TransitionAnimation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TransitionTreasury.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,12 +72,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>259BBCE7A8B12AD5BF6F903451E32CEC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32AEDDF73054357A8AADB6DC32FA61D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48539083183AFA7558ECEC8627210F32</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6C321C6AE967EEA9B06E6F5E270DFFCB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B180D9F3E5D092BFE0397776537E36C3</key>
+		<key>79BF47539E0FCA00F3005B23F76CDDC9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7A5FBFD3088A5641E69D89FFADED284A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7A742D5F4D9B1F85F156FB7FB1E331CF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,17 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D8580B99B13F9BEBBD9049139B3C1A19</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E63B9F8BCFA96C975FC69CAE4970A04B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>E6EAE7278E031E2C9412D210CF730572</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC52B8B121320ADF5EEA83D8568184DF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4084219AFBEC780350888C4D1E07A88</key>
 		<dict>
 			<key>primary</key>
 			<true/>

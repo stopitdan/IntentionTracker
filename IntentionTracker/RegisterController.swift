@@ -10,9 +10,12 @@ import UIKit
 import Firebase
 import TextFieldEffects
 import SimpleAlert
+import TransitionTreasury
+import TransitionAnimation
 
-
-class RegisterController: UIViewController {
+class RegisterController: UIViewController, NavgationTransitionable {
+    
+    var tr_pushTransition: TRNavgationTransitionDelegate?
     
     @IBOutlet weak var inputsView: UIView!
     
@@ -22,7 +25,7 @@ class RegisterController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: KaedeTextField!
     
     @IBOutlet weak var registerButtonView: UIView!
-    @IBOutlet weak var registerButton: ZFRippleButton!
+    @IBOutlet weak var registerButton: UIButton!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -36,6 +39,21 @@ class RegisterController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         
         
+        if FIRAuth.auth()?.currentUser != nil {
+            let uid = FIRAuth.auth()?.currentUser?.uid
+            FIRDatabase.database().reference(fromURL: "https://intentiontracker-cfbda.firebaseio.com").child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+                if let dictionary = snapshot.value as? [String: AnyObject] {
+                    let name = dictionary["name"] as! String
+                    print(name)
+            }
+            
+        }, withCancel: nil)
+        
+        }
+        else {
+            print("*!@%^&%%$#$@%#^$&^*%$&%#^@%!$!%#@$^#&%$^*&%#^$@%#@^#")
+        }
     }
     
     func changePlaceholderColors() {
@@ -58,19 +76,19 @@ class RegisterController: UIViewController {
         registerButtonView.layer.cornerRadius = 6
         registerButtonView.layer.borderColor = UIColor.white.cgColor
         registerButtonView.layer.borderWidth = 1
-        registerButton.layer.cornerRadius = 6
     }
     
     
     @IBAction func logginToggleButtonPressed(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "LoginToggle", sender: nil)
+        self.navigationController?.tr_pushViewController((UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as! LoginController), method: TRPushTransitionMethod.fade)
+
 
     }
     
     func isValidName(name:String) -> Bool {
-        // print("validate calendar: \(testStr)")
-        let nameRegEx = "^[a-zA-Z]+$"
+
+        let nameRegEx = "^[a-z A-Z]+$"
         
         let nameTest = NSPredicate(format:"SELF MATCHES %@", nameRegEx)
         return nameTest.evaluate(with: name)
@@ -81,9 +99,10 @@ class RegisterController: UIViewController {
         
         if isValidName(name: nameTextField.text!) != true {
             self.alertMessage(alertAction: AlertAction(title: "Name Invalid", style: .cancel) { action in
+                return
             })
         }
-    if passwordTextField.text! == confirmPasswordTextField.text! {
+        if passwordTextField.text! == confirmPasswordTextField.text! {
         FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
             if self.nameTextField.text == nil || self.emailTextField.text == nil || self.passwordTextField.text == nil || self.confirmPasswordTextField.text == nil {
                 self.alertMessage(alertAction: AlertAction(title: "Fields Cannot Be Blank", style: .cancel) { action in
@@ -102,13 +121,16 @@ class RegisterController: UIViewController {
                     switch errCode {
                     case .errorCodeInvalidEmail:
                         self.alertMessage(alertAction: AlertAction(title: "Email Invalid", style: .cancel) { action in
+                            return
                         })
                         
                     case .errorCodeEmailAlreadyInUse:
                         self.alertMessage(alertAction: AlertAction(title: "Email In Use", style: .cancel) { action in
+                            return
                         })
                     case .errorCodeInternalError:
                         self.alertMessage(alertAction: AlertAction(title: "Password Blank", style: .cancel) { action in
+                            return
                         })
                     case .errorCodeWeakPassword:
                         self.alertMessage(alertAction: AlertAction(title: "Password Too Short", style: .cancel) { action in
@@ -125,10 +147,11 @@ class RegisterController: UIViewController {
                 }
                 
             }
-            
-            guard let uid = user?.uid else {
-                return
-            }
+            else {
+                guard let uid = user?.uid
+                    else {
+                        return
+                    }
             
             let ref = FIRDatabase.database().reference(fromURL: "https://intentiontracker-cfbda.firebaseio.com")
             let userReference = ref.child("users").child(uid)
@@ -140,8 +163,9 @@ class RegisterController: UIViewController {
                 }
             })
             
-            
+            }
         })
+            
     }
     else {
         print("Passwords do not match")
