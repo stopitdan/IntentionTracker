@@ -11,6 +11,7 @@
 		4A51DAFBB8EDB9C99AD81716 /* Pods_IntentionTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 511EF80D3CBA84ACC304D9F5 /* Pods_IntentionTrackerTests.framework */; };
 		582650B11E1F6993002CB993 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582650B01E1F6993002CB993 /* RegisterController.swift */; };
 		5838A1B31E2863640004417E /* WalkthroughController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5838A1B21E2863640004417E /* WalkthroughController.swift */; };
+		5838A1B61E2882FD0004417E /* EntensionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5838A1B51E2882FD0004417E /* EntensionsController.swift */; };
 		58B31AC81E1F31D0003BE3BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B31AC71E1F31D0003BE3BD /* AppDelegate.swift */; };
 		58B31ACA1E1F31D0003BE3BD /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B31AC91E1F31D0003BE3BD /* LoginController.swift */; };
 		58B31ACD1E1F31D0003BE3BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B31ACB1E1F31D0003BE3BD /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		511EF80D3CBA84ACC304D9F5 /* Pods_IntentionTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntentionTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		582650B01E1F6993002CB993 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5838A1B21E2863640004417E /* WalkthroughController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughController.swift; sourceTree = "<group>"; };
+		5838A1B51E2882FD0004417E /* EntensionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntensionsController.swift; sourceTree = "<group>"; };
 		58B31AC41E1F31D0003BE3BD /* IntentionTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntentionTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B31AC71E1F31D0003BE3BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58B31AC91E1F31D0003BE3BD /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5838A1B41E2882E90004417E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5838A1B51E2882FD0004417E /* EntensionsController.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		58B31ABB1E1F31D0003BE3BD = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		58B31AC61E1F31D0003BE3BD /* IntentionTracker */ = {
 			isa = PBXGroup;
 			children = (
+				5838A1B41E2882E90004417E /* Extensions */,
 				58B31AC71E1F31D0003BE3BD /* AppDelegate.swift */,
 				58B31AC91E1F31D0003BE3BD /* LoginController.swift */,
 				58B31ACB1E1F31D0003BE3BD /* Main.storyboard */,
@@ -465,6 +476,7 @@
 			files = (
 				5838A1B31E2863640004417E /* WalkthroughController.swift in Sources */,
 				58B31ACA1E1F31D0003BE3BD /* LoginController.swift in Sources */,
+				5838A1B61E2882FD0004417E /* EntensionsController.swift in Sources */,
 				58B31AC81E1F31D0003BE3BD /* AppDelegate.swift in Sources */,
 				582650B11E1F6993002CB993 /* RegisterController.swift in Sources */,
 				58F2A6E51E241FA20028272A /* ProfileController.swift in Sources */,

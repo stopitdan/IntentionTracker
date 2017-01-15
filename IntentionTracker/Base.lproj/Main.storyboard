@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fti-z7-QYt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Gkk-8E-Kyz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -219,26 +219,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3z-zV-nn2">
-                                <rect key="frame" x="139" y="193" width="128" height="199"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHZ-54-Pv5">
+                                <rect key="frame" x="143" y="318" width="89" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Hide Tab Bar"/>
+                                <connections>
+                                    <action selector="hideTabBarPressed:" destination="Ig6-Jg-bGL" eventType="touchUpInside" id="6XS-I0-Cky"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSK-Fo-VhF">
+                                <rect key="frame" x="0.0" y="519" width="375" height="148"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="User_000000_25" selectedImage="User_000000_25" id="VJa-EW-PgG" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
-                        <connections>
-                            <outlet property="animation" destination="NAu-Gv-dZq" id="c69-Qu-qcC"/>
-                        </connections>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Profile" image="User_000000_25" selectedImage="User_000000_25" id="VJa-EW-PgG"/>
+                    <connections>
+                        <outlet property="downSwipeView" destination="wSK-Fo-VhF" id="HMd-Hn-4Hm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQz-hD-xPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="NAu-Gv-dZq" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
-            <point key="canvasLocation" x="3348" y="209"/>
+            <point key="canvasLocation" x="3348" y="208.24587706146929"/>
         </scene>
         <!--Create-->
         <scene sceneID="29Y-3o-Ocq">
@@ -430,11 +435,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Notifications" image="Alarm Clock_000000_25" selectedImage="Alarm Clock_000000_25" id="teZ-cM-78o" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
-                        <connections>
-                            <outlet property="animation" destination="RUd-hf-axW" id="3ll-zx-pLq"/>
-                        </connections>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Notifications" image="Alarm Clock_000000_25" selectedImage="Alarm Clock_000000_25" id="teZ-cM-78o"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyZ-Bj-sjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -455,11 +456,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings_000000_25" selectedImage="Settings_000000_25" id="iuN-Ve-Q1N" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
-                        <connections>
-                            <outlet property="animation" destination="wMD-gg-H6S" id="Ukd-6v-OdA"/>
-                        </connections>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings_000000_25" selectedImage="Settings_000000_25" id="iuN-Ve-Q1N"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Rw-PU-Ymt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -615,10 +612,10 @@
             </objects>
             <point key="canvasLocation" x="-28" y="89.505247376311857"/>
         </scene>
-        <!--Animated Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="P2O-uL-Q1C">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarHome" automaticallyAdjustsScrollViewInsets="NO" id="Gkk-8E-Kyz" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarHome" automaticallyAdjustsScrollViewInsets="NO" id="Gkk-8E-Kyz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Vbg-QX-rbm">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

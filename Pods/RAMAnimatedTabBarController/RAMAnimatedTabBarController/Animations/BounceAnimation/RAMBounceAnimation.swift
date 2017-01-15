@@ -56,6 +56,7 @@ open class RAMBounceAnimation : RAMItemAnimation {
       icon.tintColor = defaultIconColor
     }
   }
+
   
   /**
    Method call when TabBarController did load

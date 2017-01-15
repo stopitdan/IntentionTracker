@@ -11,15 +11,51 @@ import RAMAnimatedTabBarController
 import TransitionAnimation
 import TransitionTreasury
 
+
 class ProfileController: UIViewController, NavgationTransitionable{
+    
+    @IBOutlet weak var downSwipeView: UIView!
+    
+    @IBAction func hideTabBarPressed(_ sender: UIButton) {
+        setTabBarVisible(visible: false, animated: true)
+//        self.tabBarItem.accessibilityElementsHidden = true
+//        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+
 
     weak var modalDelegate: ModalViewControllerDelegate?
     var tr_pushTransition: TRNavgationTransitionDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
+        edgePan.edges = .bottom
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self.downSwipeView, action: #selector(respondToSwipeGesture))
+        
+        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        
+        view.addGestureRecognizer(swipeDown)
+        view.addGestureRecognizer(edgePan)
         // Do any additional setup after loading the view.
+    }
+    
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if tabBarIsVisible() == true {
+            setTabBarVisible(visible: false, animated: true)
+        }
+        else {
+            print("Already hidden you fucking dipshit")
+        }
+    }
+    
+    func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            setTabBarVisible(visible: true, animated: true)
+            print("Screen edge swiped!")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,16 +64,41 @@ class ProfileController: UIViewController, NavgationTransitionable{
     }
     
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+
+extension UIViewController {
+    
+    func setTabBarVisible(visible: Bool, animated: Bool) {
+        // hide tab bar
+        let frame = self.tabBarController?.tabBar.frame
+        
+        let height = frame?.size.height
+        let offsetY = (visible ? -height! : height)
+        print("offsetY = \(offsetY)")
+        
+        // zero duration means no animation
+        let duration:TimeInterval = (animated ? 0.3 : 0.0)
+        
+        // animate tabBar
+        if frame != nil {
+            UIView.animate(withDuration: duration) {
+                self.tabBarController?.tabBar.frame = frame!.offsetBy(dx: 0, dy: offsetY!)
+                self.view.frame = CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height + offsetY!)
+                
+                self.view.setNeedsDisplay()
+                self.view.layoutIfNeeded()
+                return
+            }
+        }
+        
     }
-    */
-
+    
+    func tabBarIsVisible() -> Bool {
+        return (self.tabBarController?.tabBar.frame.origin.y)! < UIScreen.main.bounds.height
+    }
+    
 }
 // STRENGTHS
 
